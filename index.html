@@ -19,15 +19,36 @@
         width: 70px;
         height: 40px;
         border-radius: 10px;
-        background-color: black;
+      }
+      .start-btn,
+      .stop-btn {
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 16px;
+        background-color: #4caf50;
         color: white;
+        border: none;
+        cursor: pointer;
+        margin: 0 10px;
+      }
+
+      .btn-container {
+        position: absolute;
+        left: 700px;
+        top: 250px;
+      }
+      .stop-btn {
+        background-color: #f44336;
       }
     </style>
     <title>Document</title>
   </head>
   <body>
-    <button class="btn start-btn" onclick="startLights()">START</button>
-    <button class="btn stop-btn" onclick="stopLights()">STOP</button>
+    <div class="btn-container">
+      <button class="btn start-btn" onclick="startLights()">START</button>
+      <button class="btn stop-btn" onclick="stopLights()">STOP</button>
+    </div>
     <section id="light-panel">
       <div class="div div-1"></div>
       <div class="div div-2"></div>
