@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      body {
+        background-color: black;
+      }
       .div {
-        width: 120px;
-        height: 30px;
+        width: 70px;
+        height: 20px;
         position: relative;
         left: 350px;
         top: 300px;
         float: left;
+        background-color: black;
         margin: 0 0 0 5px;
         border: 2px solid black;
       }
@@ -46,19 +50,26 @@
   </head>
   <body>
     <div class="btn-container">
-      <button class="btn start-btn" onclick="startLights()">START</button>
-      <button class="btn stop-btn" onclick="stopLights()">STOP</button>
+      <button class="start-btn" onclick="startLights()">START</button>
+      <button class="stop-btn" onclick="stopLights()">STOP</button>
     </div>
 
     <audio src="assets/audio/audio.mp3" id="audio-kr"></audio>
     <section id="light-panel">
-      <div class="div div-1"></div>
-      <div class="div div-2"></div>
-      <div class="div div-3"></div>
-      <div class="div div-4"></div>
-      <div class="div div-5"></div>
-      <div class="div div-6"></div>
-      <div class="div div-7"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
     </section>
     <script
       src="https://code.jquery.com/jquery-3.7.0.min.js"
@@ -74,7 +85,7 @@
       const startLights = () => {
         $("#audio-kr")[0].play();
         interval = setInterval(() => {
-          lights.css("background-color", "white");
+          lights.css("background-color", "black");
           lights.eq(lightNumber).css("background-color", "red");
           if (lightNumber > 0) {
             lights.eq(lightNumber - 1).css("background-color", "pink");
@@ -94,7 +105,7 @@
       const stopLights = () => {
         $("#audio-kr")[0].pause();
         clearInterval(interval);
-        lights.css("background-color", "white");
+        lights.css("background-color", "black");
         lightNumber = 0;
       };
     </script>
