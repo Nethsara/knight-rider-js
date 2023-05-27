@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Knight Rider</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+    </div>
+    <br /><br /><br />
+    <div class="control">
+      <button onclick="startLights()">Start</button>
+      <button onclick="stopLights()">Stop</button>
+    </div>
+
+    <script>
+      const lights = document.querySelectorAll(".light");
+
+      let interval;
+      const startLights = () => {
+        let index = 0;
+        lights[index].classList.add("active");
+        interval = setInterval(() => {
+          if (index < lights.length) {
+            index++;
+            lights[index].classList.add("active");
+            lights[index - 1].classList.remove("active");
+          }
+        }, 100);
+      };
+
+      const stopLights = () => {
+        console.log("stop");
+        lights.forEach((light) => {
+          light.classList.remove("active");
+        });
+        clearInterval(interval);
+      };
+    </script>
+  </body>
+</html>
