@@ -49,6 +49,8 @@
       <button class="btn start-btn" onclick="startLights()">START</button>
       <button class="btn stop-btn" onclick="stopLights()">STOP</button>
     </div>
+
+    <audio src="assets/audio/audio.mp3" id="audio-kr"></audio>
     <section id="light-panel">
       <div class="div div-1"></div>
       <div class="div div-2"></div>
@@ -70,6 +72,7 @@
       let interval;
 
       const startLights = () => {
+        $("#audio-kr")[0].play();
         interval = setInterval(() => {
           lights.css("background-color", "white");
           lights.eq(lightNumber).css("background-color", "red");
@@ -89,6 +92,7 @@
       };
 
       const stopLights = () => {
+        $("#audio-kr")[0].pause();
         clearInterval(interval);
         lights.css("background-color", "white");
         lightNumber = 0;
